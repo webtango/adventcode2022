@@ -2,7 +2,6 @@ package day3
 
 import (
 	"advent2022/utils"
-	"bufio"
 	"fmt"
 	"os"
 	"unicode"
@@ -29,11 +28,10 @@ func StartDay() {
 }
 
 func Part1Solution(f *os.File) {
-	scanner := bufio.NewScanner(f)
+	lines := utils.ReadFileAsLines(f)
 
 	priorityCount := 0
-	for scanner.Scan() {
-		line := scanner.Text()
+	for _, line := range lines {
 
 		var bp backpack
 
